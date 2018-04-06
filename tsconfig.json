@@ -1,0 +1,31 @@
+{
+  "include": [
+    "src",
+    "dev",
+    "test",
+    "@types" //pick up .d.ts
+  ],
+  "exclude": [
+		"dist",
+		"node_modules"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es2015"
+    ],
+    "noEmitHelpers": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true
+  }
+}
+// JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists

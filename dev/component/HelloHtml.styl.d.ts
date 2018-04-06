@@ -1,0 +1,1 @@
+export let hello_html__color: string
