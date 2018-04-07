@@ -1,1 +1,1 @@
-export let hello_html__color: string
+export let hello_html__border: string

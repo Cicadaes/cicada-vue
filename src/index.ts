@@ -1,3 +1,4 @@
+import Theme from './mixins/theme'
 import Mount from './mount'
 
 import './style/main.styl'
@@ -14,7 +15,7 @@ export default class Cicadavue {
   public static Vue: any
   public static optons: any
 
-  public static install(Vue: any, opts: any) {
+  public static install(Vue: any, opts = {}) {
     Vue.use({ install: () => {
       if (Cicadavue.isInstalled) {
         return
@@ -22,6 +23,13 @@ export default class Cicadavue {
       Cicadavue.Vue = Vue
       Cicadavue.optons = opts
       Cicadavue.isInstalled = true
+
+      Vue.prototype.$cicadavue = new Vue({
+        data: {
+          dark: false,
+          theme: new Theme(Cicadavue.optons.theme),
+        },
+      })
 
       // tslint:disable-next-line:no-unused-expression
       new Mount()

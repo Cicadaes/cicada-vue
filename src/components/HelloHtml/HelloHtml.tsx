@@ -16,7 +16,7 @@ export default class HelloHtml extends Vue {
   public render(h: () => void) {
     return (
       <div
-        class={`layout-bg ${Style.hello_html__color}`}>
+        class={`layout-bg white--text ${Style.hello_html__border}`}>
         {this.link.name}--{this.link.sex}--{this.link.age}
       </div>
     )

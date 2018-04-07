@@ -1,0 +1,37 @@
+@import './theme/*'
+
+// Default Material Theme
+// ============================================================
+$material-theme := $material-light
+$material-twelve-percent-light := rgba($material-dark.fg-color, $material-dark.divider-percent)
+$material-twelve-percent-dark := rgba($material-light.fg-color, $material-light.divider-percent)
+
+
+// Theme
+// ============================================================
+$body-bg-light := $material-light.background
+$body-bg-dark := $material-dark.background
+$body-color-light := rgba($material-dark.text-color, $material-dark.primary-text-percent)
+$body-color-dark := rgba($material-light.text-color, $material-light.primary-text-percent)
+$color-theme := rgba($material-theme.text-color, $material-theme.primary-text-percent)
+
+app($component)
+  .application
+    &.theme--light
+      $component($material-light)
+    &.theme--dark
+      $component($material-dark)
+
+theme($component, $name)
+  light($component, $name)
+  dark($component, $name)
+
+light($component, $name)
+  .theme--light .{$name},
+  .application .theme--light.{$name}
+    $component($material-light)
+
+dark($component, $name)
+  .theme--dark .{$name},
+  .application .theme--dark.{$name}
+    $component($material-dark)
