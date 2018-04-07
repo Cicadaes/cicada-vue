@@ -7,7 +7,7 @@ import { Component } from 'vue-property-decorator'
 // ---
 import * as Style from './HelloHtml.styl'
 // import * as Template from './HelloHtml.html'
-// console.log(Template)
+// console.log(Style)
 // @Template
 @Component
 export default class HelloHtml extends Vue {
@@ -16,7 +16,7 @@ export default class HelloHtml extends Vue {
   public render(h: () => void) {
     return (
       <div
-        class={`layout-bg white--text ${Style.hello_html__border}`}>
+        class={`layout-bg ${Style.hello_html__border}`}>
         {this.link.name}--{this.link.sex}--{this.link.age}
       </div>
     )

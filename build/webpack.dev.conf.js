@@ -25,7 +25,8 @@ module.exports = merge(baseConf, {
   devServer: {
     contentBase: './dev',
     // publicPath: '/dev/',
-    port: process.env.PORT || '8080'
+    port: process.env.PORT || '9090',
+    noInfo: true
   },
   plugins: baseConf.plugins.concat([
     new HtmlWebpackPlugin({

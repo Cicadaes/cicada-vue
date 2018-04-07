@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js --hot --inline",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js --progress --hot --inline",
     "lint": "tslint --project ./tsconfig.json --fix",
     "test": "npm run lint && mocha --require ts-node/register test/**/*spec.ts --watch --watch-extensions ts"
   },
