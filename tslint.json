@@ -1,13 +1,15 @@
 {
-  "extends": "tslint-config-standard",
+  "extends": "tslint:recommended",
   "rules": {
-    "await-promise": true,
-    "no-unused-variable": true,
-    "no-use-before-declare": true,
-    "return-undefined": true,
-    "no-floating-promises": true,
-    "no-unnecessary-qualifier": true,
-    "no-unnecessary-type-assertion": true,
-    "strict-type-predicates": true
+    // "await-promise": true,
+    // "no-unused-variable": true,
+    // "no-use-before-declare": true,
+    // "return-undefined": true,
+    // "no-floating-promises": true,
+    // "no-unnecessary-qualifier": true,
+    // "no-unnecessary-type-assertion": true,
+    // "strict-type-predicates": true
+    "semicolon": [true, "never"],
+    "quotemark": [true, "single", "jsx-double"]
   }
 }

@@ -18,7 +18,8 @@ module.exports = merge(baseConf, {
   resolve: {
     extensions: ['.ts', '.js', '.json', '.tsx'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'cicadavue': resolve('../src'),
     }
   },
   devServer: {

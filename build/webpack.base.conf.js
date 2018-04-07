@@ -2,9 +2,6 @@ const { resolve } = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
-const sourceDir = isDev
-  ? resolve(__dirname, '..', 'dev')
-  : resolve(__dirname, '..', 'src')
 
 const extractStylus = new ExtractTextPlugin({
   filename: 'css/[name].[hash].css',
@@ -13,6 +10,12 @@ const extractStylus = new ExtractTextPlugin({
 })
 
 module.exports = {
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.tsx'],
+    alias: {
+      '@': resolve('../src')
+    }
+  },
   module: {
     rules: [
       {
@@ -35,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        exclude: [resolve(sourceDir, 'style')],
+        exclude: [resolve('./src/style')],
         use: ['css-hot-loader'].concat(extractStylus.extract({
           fallback: 'style-loader',
           use: [
@@ -56,7 +59,7 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        include: [resolve(sourceDir, 'style')],
+        include: [resolve('./src/style')],
         use: ['css-hot-loader'].concat(extractStylus.extract({
           fallback: 'style-loader',
           use: [

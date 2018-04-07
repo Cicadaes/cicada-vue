@@ -25,7 +25,10 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "strict": true // JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists
+    // "plugins": [
+    //   { "name": "vue-ts-plugin" }
+    // ]
   }
 }
-// JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists

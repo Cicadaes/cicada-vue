@@ -2,18 +2,15 @@
 
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
-// import App from './App.vue'
-import HelloHtml from './component/HelloHtml'
+import Cicadavue from '../src'
 
-import './style/main.styl'
+Vue.use(Cicadavue)
 
 @Component({
-  components: {
-    HelloHtml
-  }
+
 })
 class App extends Vue {
-  render (h: Function) {
+  public render(h: () => void) {
     return (
       <div>
         Hello TSX

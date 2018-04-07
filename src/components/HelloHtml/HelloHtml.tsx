@@ -11,8 +11,9 @@ import * as Style from './HelloHtml.styl'
 // @Template
 @Component
 export default class HelloHtml extends Vue {
-  link = { name: 'Jusi', sex: 'man', age: 28 }
-  render (h: Function) {
+  public name = 'hello-html'
+  public link = { name: 'Jusi', sex: 'man', age: 28 }
+  public render(h: () => void) {
     return (
       <div
         class={`layout-bg ${Style.hello_html__color}`}>
